@@ -10,6 +10,7 @@
   --font-main: 'Inter', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
+  --margin-xs: 0.5em;
   --margin-s: 1em;
   --margin-m: 2em;
   --margin-l: 3em;
@@ -233,10 +234,46 @@ main {
       box-shadow: 0px 0px 10px rgba(155, 255, 237, 0.5);
     }
 
-    &__text {
-      display: block;
+    &__link {
+      &:hover,
+      &:focus-visible {
+        & > .section__heading__icon {
+          visibility: visible;
+
+          opacity: 1;
+        }
+      }
+
       flex-shrink: 0;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
       margin-inline: 1em;
+
+      color: var(--clr-primary);
+      text-decoration: none;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+    }
+
+    &__icon {
+      visibility: hidden;
+      position: absolute;
+      right: -0.6em;
+
+      height: 20px;
+
+      opacity: 0;
+
+      transition-property: visibility, opacity;
+      transition-duration: 100ms;
+      transition-timing-function: linear;
     }
 
     position: relative;
@@ -245,13 +282,6 @@ main {
     align-items: center;
 
     margin-bottom: var(--margin-m);
-
-    text-align: center;
-    text-transform: uppercase;
-    font-family: var(--font-mono);
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: 0.25em;
   }
 
   &__icon {
@@ -330,6 +360,8 @@ main {
   }
 
   &__heading {
+    margin-bottom: var(--margin-s);
+
     color: var(--clr-primary);
     font-size: 1.25rem;
     font-weight: 700;
@@ -382,7 +414,7 @@ main {
 
   display: flex;
   align-items: start;
-  gap: 30px;
+  gap: 40px;
 
   max-width: 800px;
   margin-inline: auto;
