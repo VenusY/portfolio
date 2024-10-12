@@ -12,11 +12,12 @@
     />
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <script src="index.js" defer></script>
     <title>Venus Yip</title>
   </head>
   <body>
     <nav class="nav">
-      <div class="wrapper">
+      <div class="nav__wrapper">
         <a href="" class="logo__link">
           <img src="" alt="Site logo" class="logo" />
         </a>
@@ -29,7 +30,7 @@
         <a href="#contact-me" class="page-links__link">Contact Me</a>
       </div>
 
-      <div class="wrapper">
+      <div class="nav__wrapper">
         <div class="social-links">
           <a
             href="https://github.com/VenusY"
@@ -133,37 +134,36 @@
 
         <img src="assets/icons/user.svg" alt="" class="section__icon" />
 
-        <p class="description">
+        <p class="about-me">
           My journey began in secondary school when I chose computing for my
           GCSEs. While learning Python, I discovered that I had a passion for
           programming and building projects. I loved the idea that you could
-          build anything you wanted as long as you had perseverence and an
+          build anything as long as you had the perseverence and the
           imagination&mdash; it was a thought that was simultaneously intriguing
           and intimidating.
         </p>
 
-        <p class="description">
-          Unfortunately, I never followed through with this interest as I was
-          still convinced that I wanted to go into law during this period of my
-          life.
+        <p class="about-me">
+          Unfortunately, I never pursued this interest as I was still convinced
+          that I wanted to go into law during this period of my life.
         </p>
 
-        <p class="description">
-          I would later rediscover my passion for programming when I relearned
-          the basics of Python in preparation for a law apprenticeship. I found
-          out that programming could be useful for automating large-scale,
-          repetitive tasks in law, and this led me on a research journey until I
-          finally landed on web development.
+        <p class="about-me">
+          I would later rediscover this passion for programming after years of
+          it lying dormant when I relearned the basics of Python in preparation
+          for a law apprenticeship. I found out that programming could be useful
+          for automating large-scale, repetitive tasks in law, and this led me
+          on a research journey until I finally landed on web development.
         </p>
 
-        <p class="description">
+        <p class="about-me">
           Since then, I've been building projects and learning as much as I can
           about web development and programming in general. My main focus these
           days is familiarising myself with tools like NPM and Webpack, as well
           as GitHub to prepare myself for an official entry into the industry.
         </p>
 
-        <p class="description">
+        <p class="about-me">
           When I'm not staring at documentation or at war with CSS, you can find
           me buried in a book or zipping around with friends on Hoxxes IV,
           trying not to die to a glyphid.
@@ -298,6 +298,7 @@
 
           <div class="project__details-container">
             <h3 class="project__heading">TODO</h3>
+
             <p class="project__description">
               A dynamic task management tool which allows users to input tasks,
               which are locally stored in the browser using the localStorage
@@ -305,25 +306,67 @@
               edit, delete, and reorder tasks by dragging and dropping, as well
               as mark them as completed.
             </p>
+
             <div class="project__tags-container">
-              <p class="project__tags project__tags--javascript">JavaScript</p>
-              <p class="project__tags project__tags--html">HTML</p>
-              <p class="project__tags project__tags--sass">Sass</p>
-              <p class="project__tags">localStorage API</p>
-              <p class="project__tags">GitHub Pages</p>
+              <p class="project__tag project__tag--javascript">JavaScript</p>
+              <p class="project__tag project__tag--html">HTML</p>
+              <p class="project__tag project__tag--sass">Sass</p>
+              <p class="project__tag">localStorage API</p>
+              <p class="project__tag">GitHub Pages</p>
             </div>
           </div>
         </section>
 
-        <!-- <section class="project">
-          <img src="" alt="">
+        <section class="project">
+          <img
+            src="assets/images/space-tourism-site.png"
+            alt="Space Tourism site preview"
+            class="project__preview-image"
+          />
 
           <div class="project__details-container">
-            <h3 class="project__heading"></h3>
-            <p class="project__description"></p>
-            <div class="project__tags-container"></div>
+            <h3 class="project__heading">Space Tourism</h3>
+
+            <p class="project__description">
+              A fun website which allows users to take a glimpse into space by
+              learning about celestial objects in our solar system, important
+              figures in astronomy, and technology used in space travel.
+            </p>
+
+            <div class="project__tags-container">
+              <p class="project__tag project__tag--react">React</p>
+              <p class="project__tag project__tag--sass">Sass</p>
+              <p class="project__tag project__tag--json">JSON</p>
+              <p class="project__tag">GitHub Pages</p>
+            </div>
           </div>
-        </section> -->
+        </section>
+
+        <section class="project">
+          <img
+            src="assets/images/splitter.png"
+            alt=""
+            class="project__preview-image"
+          />
+
+          <div class="project__details-container">
+            <h3 class="project__heading">Splitter</h3>
+
+            <p class="project__description">
+              A tool which aims to simplify bill splitting through a
+              user-friendly interface. Splitter allows users to input the total
+              bill amount, the desired tip percentage, and the number of people
+              sharing the bill, which are then used to calculate the tip per
+              person and the total per person.
+            </p>
+
+            <div class="project__tags-container">
+              <p class="project__tag project__tag--react">React</p>
+              <p class="project__tag project__tag--css">CSS</p>
+              <p class="project__tag">GitHub Pages</p>
+            </div>
+          </div>
+        </section>
       </section>
 
       <section class="section">
@@ -340,6 +383,48 @@
         </h2>
 
         <img src="assets/icons/paper-plane.svg" alt="" class="section__icon" />
+
+        <form
+          class="contact-form"
+          action="https://formsubmit.co/venusyip@outlook.com"
+          method="POST"
+        >
+          <div class="contact-form__wrapper contact-form__wrapper--name">
+            <input
+              class="contact-form__name"
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              autocomplete="name"
+            />
+          </div>
+
+          <div
+            class="contact-form__wrapper contact-form__wrapper--email-address"
+          >
+            <input
+              class="contact-form__email-address"
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="contact-form__wrapper contact-form__wrapper--message">
+            <textarea
+              class="contact-form__message"
+              name="message"
+              placeholder="Message"
+              rows="20"
+              cols="60"
+            ></textarea>
+          </div>
+
+          <button class="contact-form__submit-button" type="submit">
+            Submit
+          </button>
+        </form>
       </section>
     </main>
   </body>
