@@ -149,11 +149,11 @@
         </p>
 
         <p class="about-me">
-          I would later rediscover this passion for programming after years of
-          it lying dormant when I relearned the basics of Python in preparation
-          for a law apprenticeship. I found out that programming could be useful
-          for automating large-scale, repetitive tasks in law, and this led me
-          on a research journey until I finally landed on web development.
+          I would later rediscover this passion for programming when I relearned
+          the basics of Python in preparation for a law apprenticeship. I found
+          out that programming could be useful for automating large-scale,
+          repetitive tasks in law, and this led me on a research journey until I
+          finally landed on web development.
         </p>
 
         <p class="about-me">
@@ -384,11 +384,7 @@
 
         <img src="assets/icons/paper-plane.svg" alt="" class="section__icon" />
 
-        <form
-          class="contact-form"
-          action="https://formsubmit.co/venusyip@outlook.com"
-          method="POST"
-        >
+        <form class="contact-form" novalidate onsubmit="return false;">
           <div class="contact-form__wrapper contact-form__wrapper--name">
             <input
               class="contact-form__name"
@@ -421,9 +417,39 @@
             ></textarea>
           </div>
 
-          <button class="contact-form__submit-button" type="submit">
-            Submit
-          </button>
+          <input type="hidden" name="_next" value="pages/thankyou.html" />
+
+          <div class="contact-form__button-wrapper">
+            <button class="contact-form__submit-button" type="submit">
+              Submit
+            </button>
+          </div>
+
+          <div class="contact-form__error-messages">
+            <p
+              class="contact-form__error-message contact-form__error-message--name"
+            >
+              Full Name field must not be empty.
+            </p>
+
+            <p
+              class="contact-form__error-message contact-form__error-message--email-empty"
+            >
+              Email Address field must not be empty.
+            </p>
+
+            <p
+              class="contact-form__error-message contact-form__error-message--email-invalid"
+            >
+              Email Address is invalid.
+            </p>
+
+            <p
+              class="contact-form__error-message contact-form__error-message--message"
+            >
+              Message field must not be empty.
+            </p>
+          </div>
         </form>
       </section>
     </main>
