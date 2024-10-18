@@ -118,7 +118,7 @@ main {
     }
 
     &::before {
-      content: counter(index, decimal-leading-zero);
+      content: '[' counter(index) ']';
       counter-increment: index;
 
       margin-right: 0.6em;
