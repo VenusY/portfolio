@@ -41,6 +41,17 @@ main {
   padding-inline: 50px;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: fit-content;
+  min-height: 100vh;
+  padding-block: 200px;
+  margin-inline: auto;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -53,11 +64,13 @@ main {
   display: flex;
   justify-content: space-between;
 
+  width: 100vw;
   padding: 16px 32px;
 
-  position: sticky;
+  position: fixed;
   z-index: 1;
   top: 0;
+  left: 0;
 
   background: var(--clr-bg-primary);
 
@@ -89,7 +102,7 @@ main {
   &__link {
     font-family: var(--font-mono);
     font-size: 0.875rem;
-    color: var(--clr-primary);
+    color: var(--clr-secondary);
     text-decoration: none;
     text-transform: uppercase;
 
@@ -163,11 +176,59 @@ main {
   }
 }
 
+.header {
+  &__button-wrapper {
+    position: relative;
+
+    width: 259.2px;
+    height: 56px;
+
+    background: linear-gradient(
+      125deg,
+      var(--clr-accent-primary),
+      var(--clr-accent-secondary)
+    );
+    border-radius: 8px;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 1rem 1.5rem;
+
+    background: var(--clr-bg-secondary);
+    border-radius: 5px;
+
+    color: var(--clr-primary);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition-property: top, left, color;
+    transition-duration: 100ms;
+    transition-timing-function: linear;
+
+    &:hover,
+    &:focus-visible {
+      top: -5px;
+      left: -5px;
+
+      color: var(--clr-accent-primary);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
 .main-heading {
-  margin-top: var(--margin-m);
+  margin-inline: auto;
   margin-bottom: var(--margin-s);
 
-  text-align: center;
   font-size: 3.5rem;
   font-weight: 700;
 
@@ -177,6 +238,8 @@ main {
   }
 
   &__first-line {
+    margin-bottom: var(--margin-s);
+
     font-family: var(--font-mono);
     font-size: 1rem;
     font-weight: 400;
@@ -266,15 +329,6 @@ main {
     }
 
     &__link {
-      &:hover,
-      &:focus-visible {
-        & > .section__heading__icon {
-          visibility: visible;
-
-          opacity: 1;
-        }
-      }
-
       flex-shrink: 0;
 
       display: flex;
@@ -290,6 +344,15 @@ main {
       font-family: var(--font-mono);
       font-weight: 700;
       letter-spacing: 0.25em;
+
+      &:hover,
+      &:focus-visible {
+        & > .section__heading__icon {
+          visibility: visible;
+
+          opacity: 1;
+        }
+      }
     }
 
     &__icon {
@@ -345,7 +408,7 @@ main {
     height: 150px;
 
     background: var(--clr-bg-secondary);
-    border-radius: 10px;
+    border-radius: 8px;
   }
 }
 

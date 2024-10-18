@@ -108,14 +108,18 @@
         >
       </h1>
 
-      <a href="#about-me" class="scroll-button">
+      <div class="header__button-wrapper">
+        <a href="#about-me" class="header__button">Find out more about me</a>
+      </div>
+
+      <!-- <a href="" class="scroll-button">
         <div class="arrow">
           <div class="arrow__shaft"></div>
 
           <div class="arrow__head arrow__head--right"></div>
           <div class="arrow__head arrow__head--left"></div>
         </div>
-      </a>
+      </a> -->
     </header>
 
     <main>
@@ -382,7 +386,7 @@
           <div class="section__heading__line"></div>
         </h2>
 
-        <img src="assets/icons/paper-plane.svg" alt="" class="section__icon" />
+        <img src="assets/icons/envelope.svg" alt="" class="section__icon" />
 
         <form class="contact-form" novalidate onsubmit="return false;">
           <div class="contact-form__wrapper contact-form__wrapper--name">
@@ -416,8 +420,6 @@
               cols="60"
             ></textarea>
           </div>
-
-          <input type="hidden" name="_next" value="pages/thankyou.html" />
 
           <div class="contact-form__button-wrapper">
             <button class="contact-form__submit-button" type="submit">
