@@ -5,11 +5,12 @@
   --clr-accent-primary: #9bffed;
   --clr-accent-secondary: #bb9bff;
   --clr-error: #ff4c53;
+  --clr-success: #b4ff9b;
   --clr-bg-primary: #17171e;
   --clr-bg-secondary: #1e1e28;
 
   --font-main: 'Inter', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-mono: 'SF Mono', monospace;
 
   --margin-xs: 0.5em;
   --margin-s: 1em;
@@ -669,6 +670,96 @@ main {
     &--visible {
       display: block;
     }
+  }
+}
+
+.thank-you-popup {
+  --duration: 1500ms;
+  --delay: calc(var(--duration) / 4);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+
+  width: fit-content;
+  padding: 1.25rem 1.5rem;
+
+  background: var(--clr-bg-secondary);
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+
+  &--visible {
+    animation-name: fade-in;
+    animation-duration: var(--duration);
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+  }
+
+  &__plane-icon {
+    height: 40px;
+    margin-bottom: var(--margin-xs);
+
+    &--visible {
+      animation-name: wiggle;
+      animation-delay: var(--delay);
+      animation-duration: 400ms;
+      animation-timing-function: linear;
+    }
+  }
+
+  &__heading {
+    margin-bottom: var(--margin-xs);
+
+    color: var(--clr-success);
+    font-family: var(--font-mono);
+    font-weight: 700;
+  }
+
+  &__message {
+    color: var(--clr-secondary);
+    font-size: 0.875rem;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    left: 20px;
+
+    visibility: hidden;
+    opacity: 0;
+  }
+  25% {
+    left: 50px;
+
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    left: 50px;
+
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 
