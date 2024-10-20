@@ -82,14 +82,16 @@ function handleSubmit(e) {
         messageInputField.value = '';
 
         const thankYouPopup = document.querySelector('.thank-you-popup');
-        const popupPlaneIcon = document.querySelector(
-          '.thank-you-popup__plane-icon',
-        );
+        const popupIcon = thankYouPopup.querySelector('.thank-you-popup__icon');
 
-        thankYouPopup.classList.add('thank-you-popup--visible');
-        popupPlaneIcon.classList.add('thank-you-popup__plane-icon--visible');
+        thankYouPopup.classList.add('popup--visible');
+        popupIcon.classList.add('popup__icon--visible');
       } else {
-        console.log('Unable to submit form.');
+        const errorPopup = document.querySelector('.error-popup');
+        const popupIcon = errorPopup.querySelector('.error-popup__icon');
+
+        errorPopup.classList.add('popup--visible');
+        popupIcon.classList.add('popup__icon--visible');
       }
     })
     .catch((error) => {
@@ -107,14 +109,17 @@ function removeClasses(e) {
     return;
   }
 
-  e.currentTarget.classList.remove('thank-you-popup--visible');
+  e.currentTarget.classList.remove('popup--visible');
 
-  const popupPlaneIcon = document.querySelector('.thank-you-popup__plane-icon');
-  popupPlaneIcon.classList.remove('thank-you-popup__plane-icon--visible');
+  const popupIcon = e.currentTarget.querySelector('.popup__icon');
+  popupIcon.classList.remove('popup__icon--visible');
 }
 
 const thankYouPopup = document.querySelector('.thank-you-popup');
+const errorPopup = document.querySelector('.error-popup');
+
 thankYouPopup.addEventListener('animationend', removeClasses);
+errorPopup.addEventListener('animationend', removeClasses);
 
 // Scroll snap offset
 
