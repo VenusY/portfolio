@@ -82,16 +82,13 @@ function handleSubmit(e) {
         messageInputField.value = '';
 
         const thankYouPopup = document.querySelector('.thank-you-popup');
-        const popupIcon = thankYouPopup.querySelector('.thank-you-popup__icon');
+        const popupIcon = thankYouPopup.querySelector('.popup__icon');
 
         thankYouPopup.classList.add('popup--visible');
         popupIcon.classList.add('popup__icon--visible');
       } else {
         const errorPopup = document.querySelector('.error-popup');
-        const popupIcon = errorPopup.querySelector('.error-popup__icon');
-
         errorPopup.classList.add('popup--visible');
-        popupIcon.classList.add('popup__icon--visible');
       }
     })
     .catch((error) => {
