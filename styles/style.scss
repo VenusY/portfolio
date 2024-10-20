@@ -673,8 +673,8 @@ main {
   }
 }
 
-.thank-you-popup {
-  --duration: 1500ms;
+.popup {
+  --duration: 2500ms;
   --delay: calc(var(--duration) / 4);
 
   display: flex;
@@ -686,12 +686,15 @@ main {
   left: 20px;
 
   width: fit-content;
+  max-width: 300px;
   padding: 1.25rem 1.5rem;
 
   background: var(--clr-bg-secondary);
   border-radius: 5px;
   visibility: hidden;
   opacity: 0;
+
+  text-align: center;
 
   &--visible {
     animation-name: fade-in;
@@ -701,7 +704,7 @@ main {
     animation-timing-function: linear;
   }
 
-  &__plane-icon {
+  &__icon {
     height: 40px;
     margin-bottom: var(--margin-xs);
 
@@ -716,15 +719,22 @@ main {
   &__heading {
     margin-bottom: var(--margin-xs);
 
-    color: var(--clr-success);
     font-family: var(--font-mono);
     font-weight: 700;
   }
 
   &__message {
-    color: var(--clr-secondary);
     font-size: 0.875rem;
+    color: var(--clr-secondary);
   }
+}
+
+.thank-you-popup__heading {
+  color: var(--clr-success);
+}
+
+.error-popup__heading {
+  color: var(--clr-error);
 }
 
 @keyframes fade-in {
