@@ -80,16 +80,28 @@ main {
   &__wrapper {
     flex-grow: 1;
     flex-basis: 0;
+
+    display: flex;
+    align-items: center;
   }
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  display: block;
+  width: 40px;
+  height: 40px;
 
   &__link {
     width: fit-content;
-    display: none;
+
+    border-radius: 50%;
+
+    transition: transform 100ms linear;
+
+    &:hover,
+    &:focus-visible {
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -133,17 +145,18 @@ main {
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 16px;
+  gap: 15px;
 
   height: 100%;
+  margin-left: auto;
 
   &__button {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
 
     border-radius: 50%;
     background: #282835;
@@ -165,7 +178,7 @@ main {
   }
 
   &__icon {
-    height: 20px;
+    height: 18px;
     width: auto;
     overflow: visible;
   }
