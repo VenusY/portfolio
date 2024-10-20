@@ -67,26 +67,54 @@ function handleSubmit(e) {
   const formData = new FormData(contactForm);
   const data = Object.fromEntries(formData);
 
-  try {
-    fetch('https://formsubmit.co/ajax/venusyip@outlook.com', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-  } catch (error) {
-    console.log(error);
-  }
+  fetch('https://formsubmit.co/ajax/venusyip@outlook.com', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (response.ok) {
+        nameInputField.value = '';
+        emailAddressInputField.value = '';
+        messageInputField.value = '';
 
-  nameInputField.value = '';
-  emailAddressInputField.value = '';
-  messageInputField.value = '';
+        const thankYouPopup = document.querySelector('.thank-you-popup');
+        const popupPlaneIcon = document.querySelector(
+          '.thank-you-popup__plane-icon',
+        );
+
+        thankYouPopup.classList.add('thank-you-popup--visible');
+        popupPlaneIcon.classList.add('thank-you-popup__plane-icon--visible');
+      } else {
+        console.log('Unable to submit form.');
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 const contactForm = document.querySelector('.contact-form');
 contactForm.addEventListener('submit', handleSubmit);
+
+// Remove class after animation finishes
+
+function removeClasses(e) {
+  if (e.target !== e.currentTarget) {
+    return;
+  }
+
+  e.currentTarget.classList.remove('thank-you-popup--visible');
+
+  const popupPlaneIcon = document.querySelector('.thank-you-popup__plane-icon');
+  popupPlaneIcon.classList.remove('thank-you-popup__plane-icon--visible');
+}
+
+const thankYouPopup = document.querySelector('.thank-you-popup');
+thankYouPopup.addEventListener('animationend', removeClasses);
 
 // Scroll snap offset
 
@@ -97,7 +125,7 @@ function setOffset() {
 
   navBarHeight = navBar.offsetHeight;
   sectionHeadings.forEach(
-    heading => (heading.style.scrollMarginTop = `${navBarHeight}px`),
+    (heading) => (heading.style.scrollMarginTop = `${navBarHeight}px`),
   );
 }
 
