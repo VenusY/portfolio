@@ -288,16 +288,6 @@
 
         <img src="assets/icons/folder-open.svg" alt="" class="section__icon" />
 
-        <!-- <section class="project">
-          <img src="" alt="" class="project__preview-image" />
-  
-          <div class="project__details-container">
-            <h3 class="project__heading"></h3>
-            <p class="project__description"></p>
-            <div class="project__tags-container"></div>
-          </div>
-        </section> -->
-
         <section class="project">
           <img
             src="assets/images/todo-dark.png"
@@ -306,22 +296,74 @@
           />
 
           <div class="project__details-container">
-            <h3 class="project__heading">TODO</h3>
+            <h3 class="project__heading">
+              <a
+                href="https://venusy.github.io/todo/"
+                target="_blank"
+                class="project__link"
+                >TODO</a
+              >
+            </h3>
 
-            <p class="project__description">
-              A dynamic task management tool which allows users to input tasks,
-              which are locally stored in the browser using the localStorage
-              API, allowing them to persist between sessions. Users can create,
-              edit, delete, and reorder tasks by dragging and dropping, as well
-              as mark them as completed.
-            </p>
+            <div class="project__sub-container">
+              <p class="project__description">
+                A dynamic task management tool which allows users to input
+                tasks, which are locally stored in the browser using the
+                localStorage API, allowing them to persist between sessions.
+                Users can create, edit, delete, and reorder tasks by dragging
+                and dropping, as well as mark them as completed.
+              </p>
 
-            <div class="project__tags-container">
-              <p class="project__tag project__tag--javascript">JavaScript</p>
-              <p class="project__tag project__tag--html">HTML</p>
-              <p class="project__tag project__tag--sass">Sass</p>
-              <p class="project__tag">localStorage API</p>
-              <p class="project__tag">GitHub Pages</p>
+              <div class="project__tags-container">
+                <p class="project__tag project__tag--javascript">JavaScript</p>
+                <p class="project__tag project__tag--html">HTML</p>
+                <p class="project__tag project__tag--sass">Sass</p>
+                <p class="project__tag">localStorage API</p>
+                <p class="project__tag">GitHub Pages</p>
+              </div>
+            </div>
+
+            <div class="project__button-container">
+              <a
+                href="https://github.com/VenusY/todo"
+                target="_blank"
+                class="project__button"
+              >
+                <svg
+                  class="project__button-icon"
+                  viewBox="0 -3.1 2490.3 2493"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <ellipse
+                    cx="1245.2"
+                    cy="1243.4"
+                    fill="transparent"
+                    rx="1217.6"
+                    ry="1246.5"
+                  />
+                  <path
+                    class="project__icon-colour"
+                    d="m1245.2 1.6c-687.6 0-1245.2 557.4-1245.2 1245.1 0 550.2 356.8 1016.9 851.5 1181.5 62.2 11.5 85.1-27 85.1-59.9 0-29.7-1.2-127.8-1.7-231.8-346.4 75.3-419.5-146.9-419.5-146.9-56.6-143.9-138.3-182.2-138.3-182.2-113-77.3 8.5-75.7 8.5-75.7 125 8.8 190.9 128.3 190.9 128.3 111.1 190.4 291.3 135.3 362.3 103.5 11.2-80.5 43.4-135.4 79.1-166.5-276.6-31.5-567.3-138.3-567.3-615.4 0-135.9 48.6-247 128.3-334.2-12.9-31.3-55.5-157.9 12.1-329.4 0 0 104.6-33.5 342.5 127.6 99.3-27.6 205.8-41.4 311.7-41.9 105.8.5 212.4 14.3 311.9 41.9 237.7-161.1 342.1-127.6 342.1-127.6 67.8 171.5 25.1 298.2 12.2 329.5 79.8 87.2 128.1 198.3 128.1 334.2 0 478.2-291.3 583.6-568.6 614.4 44.7 38.6 84.5 114.4 84.5 230.6 0 166.6-1.4 300.7-1.4 341.7 0 33.1 22.4 72 85.5 59.7 494.5-164.8 850.8-631.4 850.8-1181.4 0-687.7-557.5-1245.1-1245.1-1245.1"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="https://venusy.github.io/todo/"
+                target="_blank"
+                class="project__button"
+              >
+                <svg
+                  class="project__button-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    class="project__icon-colour"
+                    d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
         </section>
@@ -334,19 +376,71 @@
           />
 
           <div class="project__details-container">
-            <h3 class="project__heading">Space Tourism</h3>
+            <h3 class="project__heading">
+              <a
+                href="https://venusy.github.io/space-tourism/"
+                target="_blank"
+                class="project__link"
+                >Space Tourism</a
+              >
+            </h3>
 
-            <p class="project__description">
-              A fun website which allows users to take a glimpse into space by
-              learning about celestial objects in our solar system, important
-              figures in astronomy, and technology used in space travel.
-            </p>
+            <div class="project__sub-container">
+              <p class="project__description">
+                A fun website which allows users to take a glimpse into space by
+                learning about celestial objects in our solar system, important
+                figures in astronomy, and technology used in space travel.
+              </p>
 
-            <div class="project__tags-container">
-              <p class="project__tag project__tag--react">React</p>
-              <p class="project__tag project__tag--sass">Sass</p>
-              <p class="project__tag project__tag--json">JSON</p>
-              <p class="project__tag">GitHub Pages</p>
+              <div class="project__tags-container">
+                <p class="project__tag project__tag--react">React</p>
+                <p class="project__tag project__tag--sass">Sass</p>
+                <p class="project__tag project__tag--json">JSON</p>
+                <p class="project__tag">GitHub Pages</p>
+              </div>
+            </div>
+
+            <div class="project__button-container">
+              <a
+                href="https://github.com/VenusY/space-tourism"
+                target="_blank"
+                class="project__button"
+              >
+                <svg
+                  class="project__button-icon"
+                  viewBox="0 -3.1 2490.3 2493"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <ellipse
+                    cx="1245.2"
+                    cy="1243.4"
+                    fill="transparent"
+                    rx="1217.6"
+                    ry="1246.5"
+                  />
+                  <path
+                    class="project__icon-colour"
+                    d="m1245.2 1.6c-687.6 0-1245.2 557.4-1245.2 1245.1 0 550.2 356.8 1016.9 851.5 1181.5 62.2 11.5 85.1-27 85.1-59.9 0-29.7-1.2-127.8-1.7-231.8-346.4 75.3-419.5-146.9-419.5-146.9-56.6-143.9-138.3-182.2-138.3-182.2-113-77.3 8.5-75.7 8.5-75.7 125 8.8 190.9 128.3 190.9 128.3 111.1 190.4 291.3 135.3 362.3 103.5 11.2-80.5 43.4-135.4 79.1-166.5-276.6-31.5-567.3-138.3-567.3-615.4 0-135.9 48.6-247 128.3-334.2-12.9-31.3-55.5-157.9 12.1-329.4 0 0 104.6-33.5 342.5 127.6 99.3-27.6 205.8-41.4 311.7-41.9 105.8.5 212.4 14.3 311.9 41.9 237.7-161.1 342.1-127.6 342.1-127.6 67.8 171.5 25.1 298.2 12.2 329.5 79.8 87.2 128.1 198.3 128.1 334.2 0 478.2-291.3 583.6-568.6 614.4 44.7 38.6 84.5 114.4 84.5 230.6 0 166.6-1.4 300.7-1.4 341.7 0 33.1 22.4 72 85.5 59.7 494.5-164.8 850.8-631.4 850.8-1181.4 0-687.7-557.5-1245.1-1245.1-1245.1"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="https://venusy.github.io/space-tourism/"
+                target="_blank"
+                class="project__button"
+              >
+                <svg
+                  class="project__button-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    class="project__icon-colour"
+                    d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
         </section>
@@ -359,20 +453,72 @@
           />
 
           <div class="project__details-container">
-            <h3 class="project__heading">Splitter</h3>
+            <h3 class="project__heading">
+              <a
+                href="https://venusy.github.io/splitter/"
+                target="_blank"
+                class="project__link"
+                >Splitter</a
+              >
+            </h3>
 
-            <p class="project__description">
-              A tool which aims to simplify bill splitting through a
-              user-friendly interface. Splitter allows users to input the total
-              bill amount, the desired tip percentage, and the number of people
-              sharing the bill, which are then used to calculate the tip per
-              person and the total per person.
-            </p>
+            <div class="project__sub-container">
+              <p class="project__description">
+                A tool which aims to simplify bill splitting through a
+                user-friendly interface. Splitter allows users to input the
+                total bill amount, the desired tip percentage, and the number of
+                people sharing the bill, which are then used to calculate the
+                tip per person and the total per person.
+              </p>
 
-            <div class="project__tags-container">
-              <p class="project__tag project__tag--react">React</p>
-              <p class="project__tag project__tag--css">CSS</p>
-              <p class="project__tag">GitHub Pages</p>
+              <div class="project__tags-container">
+                <p class="project__tag project__tag--react">React</p>
+                <p class="project__tag project__tag--css">CSS</p>
+                <p class="project__tag">GitHub Pages</p>
+              </div>
+            </div>
+
+            <div class="project__button-container">
+              <a
+                href="https://github.com/VenusY/splitter"
+                target="_blank"
+                class="project__button"
+              >
+                <svg
+                  class="project__button-icon"
+                  viewBox="0 -3.1 2490.3 2493"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <ellipse
+                    cx="1245.2"
+                    cy="1243.4"
+                    fill="transparent"
+                    rx="1217.6"
+                    ry="1246.5"
+                  />
+                  <path
+                    class="project__icon-colour"
+                    d="m1245.2 1.6c-687.6 0-1245.2 557.4-1245.2 1245.1 0 550.2 356.8 1016.9 851.5 1181.5 62.2 11.5 85.1-27 85.1-59.9 0-29.7-1.2-127.8-1.7-231.8-346.4 75.3-419.5-146.9-419.5-146.9-56.6-143.9-138.3-182.2-138.3-182.2-113-77.3 8.5-75.7 8.5-75.7 125 8.8 190.9 128.3 190.9 128.3 111.1 190.4 291.3 135.3 362.3 103.5 11.2-80.5 43.4-135.4 79.1-166.5-276.6-31.5-567.3-138.3-567.3-615.4 0-135.9 48.6-247 128.3-334.2-12.9-31.3-55.5-157.9 12.1-329.4 0 0 104.6-33.5 342.5 127.6 99.3-27.6 205.8-41.4 311.7-41.9 105.8.5 212.4 14.3 311.9 41.9 237.7-161.1 342.1-127.6 342.1-127.6 67.8 171.5 25.1 298.2 12.2 329.5 79.8 87.2 128.1 198.3 128.1 334.2 0 478.2-291.3 583.6-568.6 614.4 44.7 38.6 84.5 114.4 84.5 230.6 0 166.6-1.4 300.7-1.4 341.7 0 33.1 22.4 72 85.5 59.7 494.5-164.8 850.8-631.4 850.8-1181.4 0-687.7-557.5-1245.1-1245.1-1245.1"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="https://venusy.github.io/splitter/"
+                target="_blank"
+                class="project__button"
+              >
+                <svg
+                  class="project__button-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    class="project__icon-colour"
+                    d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
         </section>

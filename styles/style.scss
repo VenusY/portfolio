@@ -446,32 +446,96 @@ main {
 }
 
 .project {
-  display: flex;
-  align-items: start;
-  gap: 30px;
+  position: relative;
 
-  max-width: 800px;
-  padding: 20px;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1000px;
   margin-inline: auto;
 
   &:not(:last-child) {
-    margin-bottom: 4rem;
+    margin-bottom: 10rem;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    .project {
+      &__details-container {
+        align-items: start;
+
+        left: 0;
+      }
+    }
   }
 
   &__preview-image {
-    width: 200px;
+    width: 55%;
     height: auto;
 
     border: 3px solid var(--clr-bg-secondary);
-    border-radius: 10px;
+    border-radius: 5px;
+  }
+
+  &__details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    position: absolute;
+    right: 0;
+
+    width: 50%;
   }
 
   &__heading {
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--margin-xs);
+  }
+
+  &__link {
+    position: relative;
 
     color: var(--clr-primary);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 700;
+    text-decoration: none;
+
+    transition: color 150ms linear;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0.2em;
+
+      width: 100%;
+      height: 2px;
+
+      background: var(--clr-accent-primary);
+
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 150ms linear;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--clr-accent-primary);
+
+      &::before {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__sub-container {
+    padding: 20px;
+    margin-bottom: 1.25rem;
+
+    background: var(--clr-bg-secondary);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
 
   &__description {
@@ -526,6 +590,39 @@ main {
 
       color: #61dafb;
     }
+  }
+
+  &__button-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__button {
+    display: block;
+
+    transition: transform 150ms linear;
+
+    &:hover,
+    &:focus-visible {
+      transform: scale(1.2);
+
+      .project__icon-colour {
+        fill: var(--clr-accent-primary);
+      }
+    }
+  }
+
+  &__button-icon {
+    display: block;
+
+    height: 20px;
+  }
+
+  &__icon-colour {
+    fill: var(--clr-primary);
+
+    transition: fill 150ms linear;
   }
 }
 
