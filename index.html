@@ -19,6 +19,7 @@
     />
     <script src="index.js" defer></script>
     <title>Venus Yip</title>
+    <meta name="description" content="Venus Yip's portfolio website." />
   </head>
   <body>
     <nav class="nav">
@@ -40,6 +41,7 @@
           <a
             href="https://github.com/VenusY"
             target="_blank"
+            aria-label="My GitHub profile"
             class="social-links__button"
           >
             <svg
@@ -64,6 +66,7 @@
           <a
             href="https://www.linkedin.com/in/venus-yip-869aa4217/"
             target="_blank"
+            aria-label="My LinkedIn profile"
             class="social-links__button"
           >
             <svg
@@ -81,6 +84,7 @@
           <a
             href="https://www.frontendmentor.io/profile/VenusY"
             target="_blank"
+            aria-label="My Frontend Mentor profile"
             class="social-links__button"
           >
             <svg
@@ -130,20 +134,22 @@
     <main>
       <section class="section">
         <h2 id="about-me" class="section__heading">
-          <div class="section__heading__line"></div>
-          <a href="#about-me" class="section__heading__link"
-            ><span>About Me</span
-            ><img
-              src="assets/icons/link.svg"
+          <a href="#about-me" class="section__heading__link">
+            <img
+              src="assets/icons/user.svg"
               alt=""
-              class="section__heading__icon"
-          /></a>
-          <div class="section__heading__line"></div>
+              class="section__heading__section-icon"
+            />
+            About Me
+          </a>
+          <img
+            src="assets/icons/link.svg"
+            alt=""
+            class="section__heading__link-icon"
+          />
         </h2>
 
-        <img src="assets/icons/user.svg" alt="" class="section__icon" />
-
-        <p class="about-me">
+        <p class="about-me-paragraph">
           My journey began in secondary school when I chose computing for my
           GCSEs. While learning Python, I discovered that I had a passion for
           programming and building projects. I loved the idea that you could
@@ -152,12 +158,12 @@
           and intimidating.
         </p>
 
-        <p class="about-me">
+        <p class="about-me-paragraph">
           Unfortunately, I never pursued this interest as I was still convinced
           that I wanted to go into law during this period of my life.
         </p>
 
-        <p class="about-me">
+        <p class="about-me-paragraph">
           I would later rediscover this passion for programming when I relearned
           the basics of Python in preparation for a law apprenticeship. I found
           out that programming could be useful for automating large-scale,
@@ -165,14 +171,14 @@
           finally landed on web development.
         </p>
 
-        <p class="about-me">
+        <p class="about-me-paragraph">
           Since then, I've been building projects and learning as much as I can
           about web development and programming in general. My main focus these
           days is familiarising myself with tools like NPM and Webpack, as well
           as GitHub to prepare myself for an official entry into the industry.
         </p>
 
-        <p class="about-me">
+        <p class="about-me-paragraph">
           When I'm not staring at documentation or at war with CSS, you can find
           me buried in a book or zipping around with friends on Hoxxes IV,
           trying not to die to a glyphid.
@@ -181,22 +187,20 @@
 
       <section class="section">
         <h2 id="skills" class="section__heading">
-          <div class="section__heading__line"></div>
-          <a href="#skills" class="section__heading__link"
-            ><span>Skills</span
-            ><img
-              src="assets/icons/link.svg"
+          <a href="#skills" class="section__heading__link">
+            <img
+              src="assets/icons/screwdriver-wrench.svg"
               alt=""
-              class="section__heading__icon"
-          /></a>
-          <div class="section__heading__line"></div>
+              class="section__heading__section-icon"
+            />
+            Skills
+          </a>
+          <img
+            src="assets/icons/link.svg"
+            alt=""
+            class="section__heading__link-icon"
+          />
         </h2>
-
-        <img
-          src="assets/icons/screwdriver-wrench.svg"
-          alt=""
-          class="section__icon"
-        />
 
         <div class="skills-grid">
           <div class="skills-grid__box">
@@ -275,18 +279,20 @@
 
       <section class="section">
         <h2 id="projects" class="section__heading">
-          <div class="section__heading__line"></div>
-          <a href="#projects" class="section__heading__link"
-            ><span>Projects</span
-            ><img
-              src="assets/icons/link.svg"
+          <a href="#projects" class="section__heading__link">
+            <img
+              src="assets/icons/folder-open.svg"
               alt=""
-              class="section__heading__icon"
-          /></a>
-          <div class="section__heading__line"></div>
+              class="section__heading__section-icon"
+            />
+            Projects
+          </a>
+          <img
+            src="assets/icons/link.svg"
+            alt=""
+            class="section__heading__link-icon"
+          />
         </h2>
-
-        <img src="assets/icons/folder-open.svg" alt="" class="section__icon" />
 
         <section class="project">
           <img
@@ -327,6 +333,7 @@
               <a
                 href="https://github.com/VenusY/todo"
                 target="_blank"
+                aria-label="Open GitHub repo for TODO in new tab"
                 class="project__button"
               >
                 <svg
@@ -351,6 +358,7 @@
               <a
                 href="https://venusy.github.io/todo/"
                 target="_blank"
+                aria-label="Open TODO in new tab"
                 class="project__button"
               >
                 <svg
@@ -404,6 +412,7 @@
               <a
                 href="https://github.com/VenusY/space-tourism"
                 target="_blank"
+                aria-label="Open GitHub repo for Space Tourism site in new tab"
                 class="project__button"
               >
                 <svg
@@ -428,6 +437,7 @@
               <a
                 href="https://venusy.github.io/space-tourism/"
                 target="_blank"
+                aria-label="Open Space Tourism site in new tab"
                 class="project__button"
               >
                 <svg
@@ -482,6 +492,7 @@
               <a
                 href="https://github.com/VenusY/splitter"
                 target="_blank"
+                aria-label="Open GitHub repo for Splitter in new tab"
                 class="project__button"
               >
                 <svg
@@ -506,6 +517,7 @@
               <a
                 href="https://venusy.github.io/splitter/"
                 target="_blank"
+                aria-label="Open Splitter in new tab"
                 class="project__button"
               >
                 <svg
@@ -526,18 +538,20 @@
 
       <section class="section">
         <h2 id="contact-me" class="section__heading">
-          <div class="section__heading__line"></div>
-          <a href="#contact-me" class="section__heading__link"
-            ><span>Contact Me</span
-            ><img
-              src="assets/icons/link.svg"
+          <a href="#contact-me" class="section__heading__link">
+            <img
+              src="assets/icons/envelope.svg"
               alt=""
-              class="section__heading__icon"
-          /></a>
-          <div class="section__heading__line"></div>
+              class="section__heading__section-icon"
+            />
+            Contact Me
+          </a>
+          <img
+            src="assets/icons/link.svg"
+            alt=""
+            class="section__heading__link-icon"
+          />
         </h2>
-
-        <img src="assets/icons/envelope.svg" alt="" class="section__icon" />
 
         <form class="contact-form" novalidate onsubmit="return false;">
           <div class="contact-form__wrapper contact-form__wrapper--name">
