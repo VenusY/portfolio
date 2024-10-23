@@ -61,6 +61,57 @@ main {
   padding-bottom: 100px;
 }
 
+.brutalist-button {
+  cursor: pointer;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  background: var(--clr-bg-secondary);
+  border-radius: 5px;
+
+  color: var(--clr-primary);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition-property: top, left, color;
+  transition-duration: 100ms;
+  transition-timing-function: linear;
+
+  &:hover,
+  &:focus-visible {
+    top: -5px;
+    left: -5px;
+
+    color: var(--clr-accent-primary);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    background: linear-gradient(
+      125deg,
+      var(--clr-accent-primary),
+      var(--clr-accent-secondary)
+    );
+    border-radius: 8px;
+  }
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -192,50 +243,8 @@ main {
 
 .header {
   &__button-wrapper {
-    position: relative;
-
-    width: 259.2px;
-    height: 56px;
-
-    background: linear-gradient(
-      125deg,
-      var(--clr-accent-primary),
-      var(--clr-accent-secondary)
-    );
-    border-radius: 8px;
-  }
-
-  &__button {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    padding: 1rem 1.5rem;
-
-    background: var(--clr-bg-secondary);
-    border-radius: 5px;
-
-    color: var(--clr-primary);
-    font-family: var(--font-mono);
-    font-weight: 700;
-    text-decoration: none;
-    text-transform: uppercase;
-
-    transition-property: top, left, color;
-    transition-duration: 100ms;
-    transition-timing-function: linear;
-
-    &:hover,
-    &:focus-visible {
-      top: -5px;
-      left: -5px;
-
-      color: var(--clr-accent-primary);
-    }
-
-    &:focus-visible {
-      outline: none;
-    }
+    width: 16.25rem;
+    height: 3.5rem;
   }
 }
 
@@ -265,62 +274,12 @@ main {
   }
 }
 
-.scroll-button {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-
-  margin-inline: auto;
-  margin-bottom: 10rem;
-  width: 80px;
-
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #9bffed;
-}
-
-.arrow {
-  position: relative;
-
-  & > * {
-    background: var(--clr-accent-primary);
-    border-radius: 200vw;
-    box-shadow: 0px 0px 10px rgba(155, 255, 237, 0.5);
-  }
-
-  &__shaft {
-    width: 4px;
-    height: 300px;
-  }
-
-  &__head {
-    position: absolute;
-    height: 4px;
-
-    transform-origin: 2px;
-
-    &--right {
-      width: 40px;
-
-      transform: translateY(-4px) rotateZ(-60deg);
-    }
-
-    &--left {
-      width: 40px;
-
-      transform: translateY(-4px) rotateZ(-120deg);
-    }
-  }
-}
-
 .section {
   width: 100%;
   max-width: 1500px;
 
   &:not(:last-child) {
-    margin-bottom: 15rem;
+    margin-bottom: 18rem;
   }
 
   &__heading {
@@ -729,50 +688,11 @@ main {
   &__button-wrapper {
     grid-column: 1 / 3;
 
-    position: relative;
-
-    height: 52px;
-
-    background: linear-gradient(
-      125deg,
-      var(--clr-accent-primary),
-      var(--clr-accent-secondary)
-    );
-    border-radius: 8px;
+    height: 3.25rem;
   }
 
   &__submit-button {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    padding: 1em;
-
-    color: var(--clr-primary);
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    font-weight: 700;
     letter-spacing: 0.25em;
-    text-transform: uppercase;
-
-    cursor: pointer;
-
-    transition-property: top, left, color, border;
-    transition-duration: 100ms;
-    transition-timing-function: linear;
-
-    &:hover,
-    &:focus-visible {
-      top: -5px;
-      left: -5px;
-
-      color: var(--clr-accent-primary);
-    }
-
-    &:focus-visible {
-      outline: none;
-    }
   }
 
   &__error-messages {
@@ -888,24 +808,5 @@ main {
   }
   100% {
     transform: rotate(0deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .scroll-button {
-    animation-name: bounce;
-    animation-duration: 500ms;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease-in;
-  }
-
-  @keyframes bounce {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(40px);
-    }
   }
 }
