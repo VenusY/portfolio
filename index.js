@@ -63,6 +63,15 @@ function handleSubmit(e) {
     return;
   }
 
+  const loadingPopup = document.querySelector('.loading-popup');
+  loadingPopup.classList.add('loading-popup--visible');
+
+  // Getting the duration of the loading popup transition in milliseconds
+  const popupComputedStyle = window.getComputedStyle(loadingPopup);
+  const duration = parseFloat(popupComputedStyle.transitionDuration);
+  const durationMilliseconds = duration * 1000;
+
+  // Creating an object from the contact form input field values
   const contactForm = document.querySelector('.contact-form');
   const formData = new FormData(contactForm);
   const data = Object.fromEntries(formData);
@@ -76,23 +85,32 @@ function handleSubmit(e) {
     body: JSON.stringify(data),
   })
     .then((response) => {
-      if (response.ok) {
-        nameInputField.value = '';
-        emailAddressInputField.value = '';
-        messageInputField.value = '';
+      loadingPopup.classList.remove('loading-popup--visible');
 
-        const thankYouPopup = document.querySelector('.thank-you-popup');
-        const popupIcon = thankYouPopup.querySelector('.popup__icon');
+      setTimeout(() => {
+        if (response.ok) {
+          nameInputField.value = '';
+          emailAddressInputField.value = '';
+          messageInputField.value = '';
 
-        thankYouPopup.classList.add('popup--visible');
-        popupIcon.classList.add('popup__icon--visible');
-      } else {
+          const thankYouPopup = document.querySelector('.thank-you-popup');
+          const popupIcon = thankYouPopup.querySelector('.popup__icon');
+
+          thankYouPopup.classList.add('popup--visible');
+          popupIcon.classList.add('popup__icon--visible');
+        } else {
+          const errorPopup = document.querySelector('.error-popup');
+          errorPopup.classList.add('popup--visible');
+        }
+      }, durationMilliseconds);
+    })
+    .catch(() => {
+      loadingPopup.classList.remove('loading-popup--visible');
+
+      setTimeout(() => {
         const errorPopup = document.querySelector('.error-popup');
         errorPopup.classList.add('popup--visible');
-      }
-    })
-    .catch((error) => {
-      console.log(error);
+      }, durationMilliseconds);
     });
 }
 
@@ -127,7 +145,7 @@ function setOffset() {
 
   navBarHeight = navBar.offsetHeight;
   sectionHeadings.forEach(
-    (heading) => (heading.style.scrollMarginTop = `${navBarHeight}px`),
+    (heading) => (heading.style.scrollMarginTop = `${navBarHeight + 50}px`),
   );
 }
 
