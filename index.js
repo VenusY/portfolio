@@ -1,3 +1,50 @@
+// Scroll snap offset
+
+function setOffset() {
+  const navBar = document.querySelector('.nav');
+  const sectionHeadings = document.querySelectorAll('.section__heading');
+  let navBarHeight;
+
+  navBarHeight = navBar.offsetHeight;
+  sectionHeadings.forEach(
+    (heading) => (heading.style.scrollMarginTop = `${navBarHeight + 50}px`),
+  );
+}
+
+setOffset();
+window.addEventListener('resize', setOffset);
+
+// Animate on page load
+
+const pageLinks = document.querySelectorAll('.page-links__link');
+const socialLinks = document.querySelectorAll('.social-links__button');
+const headingLine = document.querySelectorAll('.main-heading__line');
+const headerButton = document.querySelector('.header__button-wrapper');
+const allAnimatedElements = [
+  ...pageLinks,
+  ...socialLinks,
+  ...headingLine,
+  headerButton,
+];
+
+allAnimatedElements.forEach((element, index) => {
+  element.style.setProperty('--i', index + 1);
+});
+
+pageLinks.forEach((element) => {
+  element.style.animationName = 'fade-in-and-drop';
+});
+
+socialLinks.forEach((element) => {
+  element.style.animationName = 'fade-in-and-drop';
+});
+
+headingLine.forEach((element) => {
+  element.style.animationName = 'fade-in-and-rise';
+});
+
+headerButton.style.animationName = 'fade-in-and-rise';
+
 // Form validation
 function validateInput(inputField, ...errorMessages) {
   if (errorMessages.length > 1) {
@@ -135,19 +182,3 @@ const errorPopup = document.querySelector('.error-popup');
 
 thankYouPopup.addEventListener('animationend', removeClasses);
 errorPopup.addEventListener('animationend', removeClasses);
-
-// Scroll snap offset
-
-function setOffset() {
-  const navBar = document.querySelector('.nav');
-  const sectionHeadings = document.querySelectorAll('.section__heading');
-  let navBarHeight;
-
-  navBarHeight = navBar.offsetHeight;
-  sectionHeadings.forEach(
-    (heading) => (heading.style.scrollMarginTop = `${navBarHeight + 50}px`),
-  );
-}
-
-setOffset();
-window.addEventListener('resize', setOffset);
