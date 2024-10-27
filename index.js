@@ -20,14 +20,14 @@ const pageLinks = document.querySelectorAll('.page-links__link');
 const socialLinks = document.querySelectorAll('.social-links__button');
 const headingLine = document.querySelectorAll('.main-heading__line');
 const headerButton = document.querySelector('.header__button-wrapper');
-const allAnimatedElements = [
-  ...pageLinks,
-  ...socialLinks,
-  ...headingLine,
-  headerButton,
-];
+const navAnimatedElements = [...pageLinks, ...socialLinks];
+const headerAnimatedElements = [...headingLine, headerButton];
 
-allAnimatedElements.forEach((element, index) => {
+navAnimatedElements.forEach((element, index) => {
+  element.style.setProperty('--i', index + 1);
+});
+
+headerAnimatedElements.forEach((element, index) => {
   element.style.setProperty('--i', index + 1);
 });
 

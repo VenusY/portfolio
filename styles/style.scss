@@ -18,51 +18,12 @@
   --margin-m: 2em;
   --margin-l: 3em;
 
-  --intro-animation-duration: 100ms;
+  --nav-animation-duration: 100ms;
+  --header-animation-duration: 175ms;
+  --scroll-transition-duration: 100ms;
 }
 
-// STYLING
-
-:root {
-  scroll-behavior: smooth;
-}
-
-::selection {
-  background: var(--clr-accent-primary);
-
-  color: var(--clr-bg-primary);
-}
-
-body {
-  background: var(--clr-bg-primary);
-
-  font-family: var(--font-main);
-  color: var(--clr-primary);
-}
-
-header,
-main {
-  padding-inline: 50px;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  width: fit-content;
-  min-height: 100vh;
-  padding-block: 200px;
-  margin-inline: auto;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding-bottom: 100px;
-}
+// Utility classes
 
 .brutalist-button {
   cursor: pointer;
@@ -83,6 +44,7 @@ main {
 
   color: var(--clr-primary);
   font-family: var(--font-mono);
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
@@ -113,6 +75,49 @@ main {
     );
     border-radius: 8px;
   }
+}
+
+// STYLING
+
+:root {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--clr-accent-primary);
+
+  color: var(--clr-bg-primary);
+}
+
+body {
+  background: var(--clr-bg-primary);
+
+  font-family: var(--font-main);
+  color: var(--clr-primary);
+}
+
+header,
+main {
+  padding-inline: 100px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: fit-content;
+  min-height: 100vh;
+  padding-block: 200px;
+  margin-inline: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: 100px;
 }
 
 .nav {
@@ -172,7 +177,7 @@ main {
     gap: 0.6em;
 
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-10px);
 
     font-family: var(--font-mono);
     font-size: 0.875rem;
@@ -184,8 +189,8 @@ main {
     transition-duration: 120ms;
     transition-timing-function: linear;
 
-    animation-duration: var(--intro-animation-duration);
-    animation-delay: calc(var(--intro-animation-duration) * var(--i));
+    animation-duration: var(--nav-animation-duration);
+    animation-delay: calc(var(--nav-animation-duration) * var(--i));
     animation-timing-function: linear;
     animation-fill-mode: forwards;
 
@@ -225,21 +230,21 @@ main {
 
     border-radius: 50%;
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-10px);
 
     transition-property: top, scale;
     transition-duration: 100ms;
     transition-timing-function: linear;
 
-    animation-duration: var(--intro-animation-duration);
-    animation-delay: calc(var(--intro-animation-duration) * var(--i));
+    animation-duration: var(--nav-animation-duration);
+    animation-delay: calc(var(--nav-animation-duration) * var(--i));
     animation-timing-function: linear;
     animation-fill-mode: forwards;
 
     &:hover,
     &:focus-visible {
       top: -5px;
-      scale: 1.2;
+      scale: 1.1;
 
       .social-links__icon-colour {
         fill: var(--clr-accent-primary);
@@ -266,10 +271,10 @@ main {
     height: 3.5rem;
 
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(10px);
 
-    animation-duration: var(--intro-animation-duration);
-    animation-delay: calc(var(--intro-animation-duration) * var(--i));
+    animation-duration: var(--header-animation-duration);
+    animation-delay: calc(var(--header-animation-duration) * var(--i));
     animation-timing-function: linear;
     animation-fill-mode: forwards;
   }
@@ -288,10 +293,10 @@ main {
 
   &__line {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(10px);
 
-    animation-duration: var(--intro-animation-duration);
-    animation-delay: calc(var(--intro-animation-duration) * var(--i));
+    animation-duration: var(--header-animation-duration);
+    animation-delay: calc(var(--header-animation-duration) * var(--i));
     animation-timing-function: linear;
     animation-fill-mode: forwards;
   }
@@ -303,6 +308,8 @@ main {
     font-size: 1rem;
     font-weight: 400;
     color: var(--clr-accent-primary);
+
+    animation-delay: 100ms;
   }
 
   &__last-line {
@@ -692,12 +699,9 @@ main {
   &__email-address,
   &__message,
   &__submit-button {
-    background: var(--clr-bg-secondary);
-    border-radius: 5px;
     border: none;
 
-    font-family: inherit;
-    color: var(--clr-secondary);
+    font-size: 0.875rem;
   }
 
   &__name,
@@ -705,7 +709,11 @@ main {
   &__message {
     padding: 1.25em 1.7em;
 
-    font-size: 0.875rem;
+    background: var(--clr-bg-secondary);
+    border-radius: 5px;
+
+    color: var(--clr-secondary);
+    font-family: inherit;
 
     &:focus-visible {
       outline: none;
@@ -939,5 +947,25 @@ main {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .section__heading {
+    transition: opacity var(--scroll-transition-duration) linear;
+
+    &--hidden {
+      opacity: 0;
+    }
+
+    &__line {
+      transition: transform var(--scroll-transition-duration) linear
+        var(--scroll-transition-duration);
+
+      &--hidden {
+        transform-origin: left;
+        transform: scaleX(0);
+      }
+    }
   }
 }
