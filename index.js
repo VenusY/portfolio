@@ -45,6 +45,57 @@ headingLine.forEach((element) => {
 
 headerButton.style.animationName = 'fade-in-and-rise';
 
+// Animate on scroll
+
+const sectionHeadings = document.querySelectorAll('.section__heading');
+const aboutMeParagraphs = document.querySelectorAll('.about-me-paragraph');
+const skillsCards = document.querySelectorAll('.skills-grid__box');
+const projects = document.querySelectorAll('.project');
+const contactForm = document.querySelector('.contact-form');
+const scrollInElements = [
+  ...sectionHeadings,
+  aboutMeParagraphs[0],
+  skillsCards[0],
+  ...projects,
+  contactForm,
+];
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      const className = entry.target.classList[0];
+      entry.target.classList.remove(`${className}--hidden`);
+
+      if (entry.target.classList.contains('about-me-paragraph')) {
+        aboutMeParagraphs.forEach((element) => {
+          element.classList.remove(`${className}--hidden`);
+        });
+      } else if (entry.target.classList.contains('skills-grid__box')) {
+        skillsCards.forEach((element) => {
+          element.classList.remove(`${className}--hidden`);
+        });
+      }
+    });
+  },
+  {
+    rootMargin: '0px 0px -20% 0px',
+  },
+);
+
+aboutMeParagraphs.forEach((element, index) => {
+  element.style.setProperty('--i', index);
+});
+
+skillsCards.forEach((element, index) => {
+  element.style.setProperty('--i', index);
+});
+
+scrollInElements.forEach((element) => observer.observe(element));
+
 // Form validation
 function validateInput(inputField, ...errorMessages) {
   if (errorMessages.length > 1) {
@@ -161,7 +212,6 @@ function handleSubmit(e) {
     });
 }
 
-const contactForm = document.querySelector('.contact-form');
 contactForm.addEventListener('submit', handleSubmit);
 
 // Remove class after animation finishes

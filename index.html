@@ -128,7 +128,7 @@
 
     <main>
       <section class="section">
-        <h2 id="about-me" class="section__heading">
+        <h2 id="about-me" class="section__heading section__heading--hidden">
           <a href="#about-me" class="section__heading__link">
             <img
               src="assets/icons/user.svg"
@@ -144,7 +144,7 @@
           />
         </h2>
 
-        <p class="about-me-paragraph">
+        <p class="about-me-paragraph about-me-paragraph--hidden">
           My journey began in secondary school when I chose computing for my
           GCSEs. While learning Python, I discovered that I had a passion for
           programming and building projects. I loved the idea that you could
@@ -153,12 +153,12 @@
           and intimidating.
         </p>
 
-        <p class="about-me-paragraph">
+        <p class="about-me-paragraph about-me-paragraph--hidden">
           Unfortunately, I never pursued this interest as I was still convinced
           that I wanted to go into law during this period of my life.
         </p>
 
-        <p class="about-me-paragraph">
+        <p class="about-me-paragraph about-me-paragraph--hidden">
           I would later rediscover this passion for programming when I relearned
           the basics of Python in preparation for a law apprenticeship. I found
           out that programming could be useful for automating large-scale,
@@ -166,7 +166,7 @@
           finally landed on web development.
         </p>
 
-        <p class="about-me-paragraph">
+        <p class="about-me-paragraph about-me-paragraph--hidden">
           Since then, I've been building projects and learning as much as I can
           about web development and programming in general. My main focus these
           days is familiarising myself with tools like NPM and Webpack, as well
@@ -174,7 +174,7 @@
           industry.
         </p>
 
-        <p class="about-me-paragraph">
+        <p class="about-me-paragraph about-me-paragraph--hidden">
           When I'm not staring at documentation or at war with CSS, you can find
           me within the pages of a book or zipping around with friends on Hoxxes
           IV.
@@ -182,7 +182,7 @@
       </section>
 
       <section class="section">
-        <h2 id="skills" class="section__heading">
+        <h2 id="skills" class="section__heading section__heading--hidden">
           <a href="#skills" class="section__heading__link">
             <img
               src="assets/icons/screwdriver-wrench.svg"
@@ -199,7 +199,7 @@
         </h2>
 
         <div class="skills-grid">
-          <div class="skills-grid__box">
+          <div class="skills-grid__box skills-grid__box--hidden">
             <img
               src="assets/logos/javascript-logo.svg"
               alt="JS logo"
@@ -208,7 +208,7 @@
             <p class="skill__name">JavaScript</p>
           </div>
 
-          <div class="skills-grid__box">
+          <div class="skills-grid__box skills-grid__box--hidden">
             <img
               src="assets/logos/html5-logo.svg"
               alt="HTML logo"
@@ -217,7 +217,7 @@
             <p class="skill__name">HTML</p>
           </div>
 
-          <div class="skills-grid__box">
+          <div class="skills-grid__box skills-grid__box--hidden">
             <img
               src="assets/logos/css3-logo.svg"
               alt="CSS logo"
@@ -226,7 +226,7 @@
             <p class="skill__name">CSS</p>
           </div>
 
-          <div class="skills-grid__box">
+          <div class="skills-grid__box skills-grid__box--hidden">
             <img
               src="assets/logos/react-logo.svg"
               alt="React logo"
@@ -235,7 +235,7 @@
             <p class="skill__name">React</p>
           </div>
 
-          <div class="skills-grid__box">
+          <div class="skills-grid__box skills-grid__box--hidden">
             <img
               src="assets/logos/sass-logo.svg"
               alt="Sass logo"
@@ -244,7 +244,7 @@
             <p class="skill__name">Sass</p>
           </div>
 
-          <div class="skills-grid__box">
+          <div class="skills-grid__box skills-grid__box--hidden">
             <img
               src="assets/logos/webpack-logo.svg"
               alt="Webpack logo"
@@ -253,7 +253,7 @@
             <p class="skill__name">Webpack</p>
           </div>
 
-          <div class="skills-grid__box">
+          <div class="skills-grid__box skills-grid__box--hidden">
             <img
               src="assets/logos/npm-logo.svg"
               alt="NPM logo"
@@ -262,7 +262,7 @@
             <p class="skill__name">NPM</p>
           </div>
 
-          <div class="skills-grid__box">
+          <div class="skills-grid__box skills-grid__box--hidden">
             <img
               src="assets/logos/github-logo.svg"
               alt="GitHub logo"
@@ -274,7 +274,7 @@
       </section>
 
       <section class="section">
-        <h2 id="projects" class="section__heading">
+        <h2 id="projects" class="section__heading section__heading--hidden">
           <a href="#projects" class="section__heading__link">
             <img
               src="assets/icons/folder-open.svg"
@@ -290,7 +290,7 @@
           />
         </h2>
 
-        <section class="project">
+        <section class="project project--hidden">
           <img
             src="assets/images/todo-dark.png"
             alt="TODO app"
@@ -372,7 +372,7 @@
           </div>
         </section>
 
-        <section class="project">
+        <section class="project project--hidden">
           <img
             src="assets/images/space-tourism-site.png"
             alt="Space Tourism site preview"
@@ -451,7 +451,7 @@
           </div>
         </section>
 
-        <section class="project">
+        <section class="project project--hidden">
           <img
             src="assets/images/splitter.png"
             alt=""
@@ -533,7 +533,7 @@
       </section>
 
       <section class="section">
-        <h2 id="contact-me" class="section__heading">
+        <h2 id="contact-me" class="section__heading section__heading--hidden">
           <a href="#contact-me" class="section__heading__link">
             <img
               src="assets/icons/envelope.svg"
@@ -549,7 +549,11 @@
           />
         </h2>
 
-        <form class="contact-form" novalidate onsubmit="return false;">
+        <form
+          class="contact-form contact-form--hidden"
+          novalidate
+          onsubmit="return false;"
+        >
           <div class="contact-form__wrapper contact-form__wrapper--name">
             <input
               class="contact-form__name"

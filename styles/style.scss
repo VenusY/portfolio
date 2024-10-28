@@ -20,7 +20,7 @@
 
   --nav-animation-duration: 100ms;
   --header-animation-duration: 175ms;
-  --scroll-transition-duration: 100ms;
+  --scroll-transition-duration: 200ms;
 }
 
 // Utility classes
@@ -345,6 +345,7 @@ main {
       height: 1px;
       width: 100%;
       background: #2f2f3f;
+      background: var(--clr-secondary);
     }
 
     &__section-icon {
@@ -952,20 +953,69 @@ main {
 
 @media (prefers-reduced-motion: no-preference) {
   .section__heading {
+    --pseudo-element-scale: 0;
+
+    transition: opacity var(--scroll-transition-duration) linear;
+
+    &::after {
+      transform-origin: left;
+
+      transition: transform var(--scroll-transition-duration) linear
+        var(--scroll-transition-duration);
+    }
+
+    &--hidden {
+      opacity: 0;
+
+      &::after {
+        transform: scaleX(var(--pseudo-element-scale));
+      }
+    }
+  }
+
+  .about-me-paragraph {
+    transition-property: opacity, transform;
+    transition-duration: var(--scroll-transition-duration);
+    transition-delay: calc(var(--scroll-transition-duration) * var(--i));
+    transition-timing-function: linear;
+
+    &--hidden {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+  }
+
+  .skills-grid__box {
+    --scroll-transition-duration: 120ms;
+
+    transition-property: opacity, transform;
+    transition-duration: var(--scroll-transition-duration);
+    transition-delay: calc(var(--scroll-transition-duration) * var(--i));
+    transition-timing-function: linear;
+
+    &--hidden {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+  }
+
+  .project {
+    transition-property: opacity, transform;
+    transition-duration: var(--scroll-transition-duration);
+    transition-delay: calc(var(--scroll-transition-duration) * var(--i));
+    transition-timing-function: linear;
+
+    &--hidden {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  }
+
+  .contact-form {
     transition: opacity var(--scroll-transition-duration) linear;
 
     &--hidden {
       opacity: 0;
-    }
-
-    &__line {
-      transition: transform var(--scroll-transition-duration) linear
-        var(--scroll-transition-duration);
-
-      &--hidden {
-        transform-origin: left;
-        transform: scaleX(0);
-      }
     }
   }
 }
