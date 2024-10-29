@@ -1,3 +1,43 @@
+// Animate on page load
+
+const mediaQuery = window.matchMedia('screen and (max-width: 1100px)');
+
+const menuButton = document.querySelector('.menu-button');
+const pageLinks = document.querySelectorAll('.page-links__link');
+const socialLinks = document.querySelectorAll('.social-links__button');
+const headingLines = document.querySelectorAll('.main-heading__line');
+const headerButton = document.querySelector('.header__button-wrapper');
+const allAnimatedElements = [
+  menuButton,
+  ...pageLinks,
+  ...socialLinks,
+  ...headingLines,
+  headerButton,
+];
+const headerAnimatedElements = [...headingLines, headerButton];
+
+headerAnimatedElements.forEach((element, index) => {
+  element.style.setProperty('--i', index + 1);
+});
+
+if (mediaQuery.matches) {
+  const navAnimatedElements = [menuButton, ...socialLinks];
+
+  navAnimatedElements.forEach((element, index) => {
+    element.style.setProperty('--i', index + 1);
+  });
+} else {
+  const navAnimatedElements = [...pageLinks, ...socialLinks];
+
+  navAnimatedElements.forEach((element, index) => {
+    element.style.setProperty('--i', index + 1);
+  });
+}
+
+allAnimatedElements.forEach((element) => {
+  element.style.animationName = 'intro-fade-in';
+});
+
 // Scroll snap offset
 
 function setOffset() {
@@ -13,37 +53,6 @@ function setOffset() {
 
 setOffset();
 window.addEventListener('resize', setOffset);
-
-// Animate on page load
-
-const pageLinks = document.querySelectorAll('.page-links__link');
-const socialLinks = document.querySelectorAll('.social-links__button');
-const headingLine = document.querySelectorAll('.main-heading__line');
-const headerButton = document.querySelector('.header__button-wrapper');
-const navAnimatedElements = [...pageLinks, ...socialLinks];
-const headerAnimatedElements = [...headingLine, headerButton];
-
-navAnimatedElements.forEach((element, index) => {
-  element.style.setProperty('--i', index + 1);
-});
-
-headerAnimatedElements.forEach((element, index) => {
-  element.style.setProperty('--i', index + 1);
-});
-
-pageLinks.forEach((element) => {
-  element.style.animationName = 'fade-in-and-drop';
-});
-
-socialLinks.forEach((element) => {
-  element.style.animationName = 'fade-in-and-drop';
-});
-
-headingLine.forEach((element) => {
-  element.style.animationName = 'fade-in-and-rise';
-});
-
-headerButton.style.animationName = 'fade-in-and-rise';
 
 // Animate on scroll
 
@@ -249,8 +258,6 @@ function addActiveUtilClass() {
   pageLinksContainer.classList.add('menu-button-active');
 }
 
-const menuButton = document.querySelector('.menu-button');
-
 menuButton.addEventListener('click', toggleDropdown);
 menuButton.addEventListener('click', addActiveUtilClass);
 
@@ -266,7 +273,7 @@ pageLinks.forEach((element) =>
   element.addEventListener('click', retractDropdown),
 );
 
-// Prevent transition when user switches from larger layout to smaller layout
+// Prevent transition when user switches between larger and smaller layouts
 
 function removeActiveUtilClass() {
   const mediaQuery = window.matchMedia('(min-width: 1101px)');
