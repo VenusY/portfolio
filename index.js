@@ -97,6 +97,7 @@ skillsCards.forEach((element, index) => {
 scrollInElements.forEach((element) => observer.observe(element));
 
 // Form validation
+
 function validateInput(inputField, ...errorMessages) {
   if (errorMessages.length > 1) {
     if (inputField.value && inputField.checkValidity() === false) {
@@ -232,3 +233,49 @@ const errorPopup = document.querySelector('.error-popup');
 
 thankYouPopup.addEventListener('animationend', removeClasses);
 errorPopup.addEventListener('animationend', removeClasses);
+
+// Menu drop down
+
+function toggleDropdown() {
+  const menuButtonIcon = document.querySelector('.menu-button__icon');
+  const dropDownMenu = document.querySelector('.page-links');
+
+  menuButtonIcon.classList.toggle('menu-button__icon--active');
+  dropDownMenu.classList.toggle('page-links--active');
+}
+
+function addActiveUtilClass() {
+  const pageLinksContainer = document.querySelector('.page-links');
+  pageLinksContainer.classList.add('menu-button-active');
+}
+
+const menuButton = document.querySelector('.menu-button');
+
+menuButton.addEventListener('click', toggleDropdown);
+menuButton.addEventListener('click', addActiveUtilClass);
+
+function retractDropdown() {
+  const menuButtonIcon = document.querySelector('.menu-button__icon');
+  const dropDownMenu = document.querySelector('.page-links');
+
+  menuButtonIcon.classList.remove('menu-button__icon--active');
+  dropDownMenu.classList.remove('page-links--active');
+}
+
+pageLinks.forEach((element) =>
+  element.addEventListener('click', retractDropdown),
+);
+
+// Prevent transition when user switches from larger layout to smaller layout
+
+function removeActiveUtilClass() {
+  const mediaQuery = window.matchMedia('(min-width: 1101px)');
+  const pageLinksContainer = document.querySelector('.page-links');
+
+  if (mediaQuery.matches) {
+    console.log('Media query matches.');
+    pageLinksContainer.classList.remove('menu-button-active');
+  }
+}
+
+window.addEventListener('resize', removeActiveUtilClass);
