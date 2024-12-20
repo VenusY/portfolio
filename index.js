@@ -91,7 +91,7 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    rootMargin: '0px 0px -20% 0px',
+    rootMargin: '0px 0px -30% 0px',
   },
 );
 
@@ -247,15 +247,20 @@ errorPopup.addEventListener('animationend', removeClasses);
 
 function toggleDropdown() {
   const menuButtonIcon = document.querySelector('.menu-button__icon');
-  const dropDownMenu = document.querySelector('.page-links');
+  const pageLinksDropdown = document.querySelector('.page-links');
+  const socialLinksDropdown = document.querySelector('.social-links');
 
   menuButtonIcon.classList.toggle('menu-button__icon--active');
-  dropDownMenu.classList.toggle('page-links--active');
+  pageLinksDropdown.classList.toggle('page-links--active');
+  socialLinksDropdown.classList.toggle('social-links--active');
 }
 
 function addActiveUtilClass() {
   const pageLinksContainer = document.querySelector('.page-links');
+  const socialLinksContainer = document.querySelector('.social-links');
+
   pageLinksContainer.classList.add('menu-button-active');
+  socialLinksContainer.classList.add('menu-button-active');
 }
 
 menuButton.addEventListener('click', toggleDropdown);
@@ -263,10 +268,12 @@ menuButton.addEventListener('click', addActiveUtilClass);
 
 function retractDropdown() {
   const menuButtonIcon = document.querySelector('.menu-button__icon');
-  const dropDownMenu = document.querySelector('.page-links');
+  const pageLinksDropdown = document.querySelector('.page-links');
+  const socialLinksDropdown = document.querySelector('.social-links');
 
   menuButtonIcon.classList.remove('menu-button__icon--active');
-  dropDownMenu.classList.remove('page-links--active');
+  pageLinksDropdown.classList.remove('page-links--active');
+  socialLinksDropdown.classList.remove('social-links--active');
 }
 
 pageLinks.forEach((element) =>
@@ -276,12 +283,15 @@ pageLinks.forEach((element) =>
 // Prevent transition when user switches between larger and smaller layouts
 
 function removeActiveUtilClass() {
-  const mediaQuery = window.matchMedia('(min-width: 1101px)');
+  const largerMediaQuery = window.matchMedia('(min-width: 1101px)');
+  const smallerMediaQuery = window.matchMedia('(min-width: 581px)');
   const pageLinksContainer = document.querySelector('.page-links');
+  const socialLinksContainer = document.querySelector('.social-links');
 
-  if (mediaQuery.matches) {
-    console.log('Media query matches.');
+  if (largerMediaQuery.matches) {
     pageLinksContainer.classList.remove('menu-button-active');
+  } else if (smallerMediaQuery.matches) {
+    socialLinksContainer.classList.remove('menu-button-active');
   }
 }
 

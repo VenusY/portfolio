@@ -44,7 +44,7 @@
 
   color: var(--clr-primary);
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
@@ -272,8 +272,8 @@ main {
 
 .header {
   &__button-wrapper {
-    width: 16.25rem;
-    height: 3.5rem;
+    width: 260px;
+    height: 56px;
 
     opacity: 0;
     transform: translateY(10px);
@@ -488,7 +488,7 @@ main {
     width: 55%;
     height: auto;
 
-    border: 3px solid var(--clr-bg-secondary);
+    border: 2px solid var(--clr-bg-secondary);
     border-radius: 5px;
   }
 
@@ -565,9 +565,11 @@ main {
   }
 
   &__tag {
+    --background-opacity: 0.2;
+
     padding: 0.5em 1em;
 
-    background: rgba(155, 255, 237, 0.2);
+    background: rgba(155, 255, 237, var(--background-opacity));
     border-radius: 200vw;
 
     color: var(--clr-accent-primary);
@@ -575,33 +577,45 @@ main {
 
     &--javascript,
     &--json {
-      background: rgba(240, 219, 79, 0.2);
+      background: rgba(240, 219, 79, var(--background-opacity));
 
       color: #f0db4f;
     }
 
     &--html {
-      background: rgba(239, 101, 42, 0.2);
+      background: rgba(239, 101, 42, var(--background-opacity));
 
       color: #ef652a;
     }
 
     &--css {
-      background: rgba(28, 136, 199, 0.2);
+      background: rgba(28, 136, 199, var(--background-opacity));
 
       color: #1c88c7;
     }
 
     &--sass {
-      background: rgba(235, 63, 121, 0.2);
+      background: rgba(235, 63, 121, var(--background-opacity));
 
       color: #eb3f79;
     }
 
     &--react {
-      background: rgba(97, 218, 251, 0.2);
+      background: rgba(97, 218, 251, var(--background-opacity));
 
       color: #61dafb;
+    }
+
+    &--webpack {
+      background: rgba(142, 214, 251, var(--background-opacity));
+
+      color: #8ed6fb;
+    }
+
+    &--npm {
+      background: rgba(203, 56, 55, var(--background-opacity));
+
+      color: #cb3837;
     }
   }
 
@@ -645,7 +659,8 @@ main {
   display: grid;
   gap: 20px;
 
-  width: fit-content;
+  width: 100%;
+  max-width: 550px;
   margin-inline: auto;
 
   font-family: var(--font-main);
@@ -704,7 +719,7 @@ main {
   &__email-address,
   &__message,
   &__submit-button {
-    border: none;
+    border: 0;
 
     font-size: 0.875rem;
   }
@@ -732,6 +747,8 @@ main {
 
   &__message {
     resize: none;
+    width: 100%;
+    height: 24rem;
   }
 
   &__button-wrapper {
@@ -997,6 +1014,8 @@ main {
   }
 
   .project {
+    --scroll-transition-duration: 300ms;
+
     transition-property: opacity, transform;
     transition-duration: var(--scroll-transition-duration);
     transition-delay: calc(var(--scroll-transition-duration) * var(--i));
@@ -1004,7 +1023,14 @@ main {
 
     &--hidden {
       opacity: 0;
-      transform: translateY(50px);
+
+      &:nth-of-type(odd) {
+        transform: translateX(20px);
+      }
+
+      &:nth-of-type(even) {
+        transform: translateX(-20px);
+      }
     }
   }
 
@@ -1017,6 +1043,59 @@ main {
   }
 }
 
+// Change layout of projects cards at 1200px
+@media screen and (max-width: 1200px) {
+  .project {
+    align-items: start;
+    gap: 20px;
+
+    max-width: 800px;
+
+    &:not(:last-child) {
+      margin-bottom: 8rem;
+    }
+
+    &:nth-of-type(odd) {
+      flex-direction: row;
+    }
+
+    &__preview-image {
+      width: 30%;
+      min-width: 200px;
+    }
+
+    &__details-container {
+      align-items: start;
+
+      position: static;
+
+      width: 70%;
+    }
+
+    &__sub-container {
+      padding: 0;
+
+      background: transparent;
+      box-shadow: none;
+    }
+
+    &__description {
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .project {
+      &--hidden {
+        &:nth-of-type(odd) {
+          transform: translateX(-20px);
+        }
+      }
+    }
+  }
+}
+
+// Add menu button and move page links to dropdown at 1100px
 @media screen and (max-width: 1100px) {
   :root {
     --header-animation-duration: 100ms;
@@ -1098,6 +1177,172 @@ main {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
+    }
+  }
+}
+
+// Change layout of projects cards to be stacked
+@media screen and (max-width: 850px) {
+  .project {
+    --project-card-width: 450px;
+
+    flex-direction: column;
+    align-items: center;
+
+    &:nth-of-type(odd) {
+      flex-direction: column;
+    }
+
+    &__preview-image {
+      width: 100%;
+      max-width: var(--project-card-width);
+    }
+
+    &__details-container {
+      width: 100%;
+      max-width: var(--project-card-width);
+    }
+  }
+}
+
+// Change layout for tablet screen sizes
+@media screen and (max-width: 768px) {
+  header,
+  main {
+    padding-inline: 60px;
+  }
+
+  header {
+    align-items: center;
+  }
+
+  .main-heading {
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .section {
+    &:not(:last-child) {
+      margin-bottom: 14rem;
+    }
+  }
+}
+
+// Change layout of contact form and skills grid
+@media screen and (max-width: 650px) {
+  .skills-grid {
+    gap: 15px;
+
+    &__box {
+      width: 105px;
+      height: 105px;
+    }
+  }
+
+  .skill {
+    &__icon {
+      height: 32px;
+      margin-bottom: 10px;
+
+      &--s {
+        width: 42px;
+
+        object-fit: contain;
+        object-position: bottom;
+      }
+    }
+
+    &__name {
+      color: var(--clr-secondary);
+      font-size: 14px;
+    }
+  }
+
+  .contact-form {
+    &__wrapper {
+      &--name,
+      &--email-address {
+        grid-column: 1 / 3;
+      }
+    }
+  }
+}
+
+// Move social buttons to dropdown at 580px and reduce main heading font size
+@media screen and (max-width: 580px) {
+  .nav {
+    &__wrapper {
+      flex-grow: 0;
+
+      &--logo {
+        margin-right: auto;
+      }
+    }
+  }
+
+  .main-heading {
+    font-size: 2.75rem;
+
+    &__first-line {
+      font-size: 0.875rem;
+    }
+  }
+
+  .page-links {
+    top: calc(100% + 70px);
+    right: 32px;
+
+    transition-delay: 100ms;
+  }
+
+  .social-links {
+    position: absolute;
+    top: 100%;
+    right: 32px;
+
+    height: auto;
+    padding: 20px;
+
+    background: var(--clr-bg-secondary);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+    &.menu-button-active {
+      transition-property: opacity, visibility, transform;
+      transition-duration: 100ms;
+      transition-timing-function: linear;
+    }
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Reduce padding size on the sides
+@media screen and (max-width: 500px) {
+  header,
+  main {
+    padding-inline: 35px;
+  }
+}
+
+// Change size of header button
+@media screen and (max-width: 340px) {
+  .header {
+    &__button-wrapper {
+      width: 220px;
+      height: 50px;
+    }
+
+    &__button {
+      font-size: 0.875rem;
     }
   }
 }
