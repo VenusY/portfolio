@@ -7,6 +7,8 @@ and some of my featured projects. I built this website to highlight my journey
 as a frontend developer and to experiment with building an intuitive and visually 
 appealing user interface.
 
+The site was built with HTML, Sass, and JavaScript.
+
 ## Key Features
 
 ### Contact Form
