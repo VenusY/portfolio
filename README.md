@@ -19,3 +19,15 @@ to hear from you.
 ⚠️ Occasionally, the message will not send properly when using the contact form. 
 In such cases, please feel free to send me an email. My email address is 
 displayed on my profile.
+
+### Featured Projects
+
+There is a projects section which features my current best projects.
+
+You can access the sites or apps themselves by clicking on the title of the 
+project or the 'new tab' icon at the bottom of each project preview, which will 
+open the site or app in a new tab.
+
+You can access the GitHub repositories for these projects by clicking on the 
+GitHub logo at the bottom of each project preview, which will open the 
+repository in a new tab.
