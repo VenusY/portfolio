@@ -25,9 +25,9 @@ displayed on my profile.
 There is a projects section which features my current best projects.
 
 You can access the sites or apps themselves by clicking on the title of the 
-project or the 'new tab' icon at the bottom of each project preview, which will 
-open the site or app in a new tab.
+project or the 'new tab' icon at the bottom of each project description, which 
+will open the site or app in a new tab.
 
 You can access the GitHub repositories for these projects by clicking on the 
-GitHub logo at the bottom of each project preview, which will open the 
+GitHub logo at the bottom of each project description, which will open the 
 repository in a new tab.
